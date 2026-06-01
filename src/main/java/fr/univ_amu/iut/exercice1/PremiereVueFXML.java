@@ -40,5 +40,14 @@ public class PremiereVueFXML extends Application {
     // 3. Créer une Scene avec ce Parent et la donner à primaryStage.
     //
     // 4. Ajouter un titre et show().
+    URL url = getClass().getResource("PremiereVueFXML.fxml");
+
+    javafx.scene.Parent root = FXMLLoader.load(url);
+
+    javafx.scene.Scene scene = new javafx.scene.Scene(root);
+    primaryStage.setScene(scene);
+
+    primaryStage.setTitle("Première vue FXML");
+    primaryStage.show();
   }
 }

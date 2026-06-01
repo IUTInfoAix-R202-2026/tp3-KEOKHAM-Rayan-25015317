@@ -42,44 +42,26 @@ public class CompteurController {
    */
   @FXML
   private void initialize() {
-    // TODO exercice 2 : lier le texte du label à la valeur du compteur.
-    //
-    // Utiliser Bindings.convert(...) ou compteur.asString() pour obtenir un StringBinding,
-    // puis labelCompteur.textProperty().bind(...).
-    //
-    // Ainsi, chaque fois que la valeur de `compteur` change (via incrementer/decrementer/reinit),
-    // le label se met à jour automatiquement - aucun setText() à appeler !
+    // Lie la propriété 'text' du label à la valeur du compteur convertie en chaîne de caractères.
+    // Dès que 'compteur' changera, le texte du label se mettra à jour tout seul !
+    labelCompteur.textProperty().bind(compteur.asString());
   }
 
-  /**
-   * Action du bouton +. Incrémente le compteur.
-   *
-   * <p>Grâce au binding mis en place dans {@link #initialize()}, aucune mise à jour de label n'est
-   * nécessaire ici : la modification de la propriété suffit.
-   */
   @FXML
   private void incrementer() {
-    // TODO exercice 2 : incrémenter la valeur de la propriété compteur.
+    // On ajoute 1 à la valeur actuelle
+    compteur.set(compteur.get() + 1);
   }
 
-  /** Action du bouton −. Décrémente le compteur. */
   @FXML
   private void decrementer() {
-    // TODO exercice 2 : décrémenter la valeur de la propriété compteur.
+    // On retire 1 à la valeur actuelle
+    compteur.set(compteur.get() - 1);
   }
 
-  /** Action du bouton Réinitialiser. Remet le compteur à zéro. */
   @FXML
   private void reinitialiser() {
-    // TODO exercice 2 : remettre la propriété compteur à 0.
-  }
-
-  /**
-   * Accesseur exposant la valeur courante du compteur. Utile pour les tests.
-   *
-   * @return la valeur courante du compteur
-   */
-  public int getCompteur() {
-    return compteur.get();
+    // On remet à 0
+    compteur.set(0);
   }
 }

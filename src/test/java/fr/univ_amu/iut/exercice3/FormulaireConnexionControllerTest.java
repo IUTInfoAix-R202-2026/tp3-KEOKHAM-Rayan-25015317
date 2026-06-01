@@ -41,7 +41,6 @@ class FormulaireConnexionControllerTest {
 
   // --- Étape 1 : présence des contrôles ---
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(1)
   void les_champs_identifiant_et_mot_de_passe_sont_presents(FxRobot robot) {
